@@ -57,7 +57,8 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Mohsen, a Front-end Developer based in Iran.
+            Hi! I&apos;m Mohsen, a Front-end Developer enthusiastic about
+            creating modern user interfaces.
           </p>
 
           <a href="#about">
