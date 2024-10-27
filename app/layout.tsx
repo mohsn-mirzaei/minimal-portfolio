@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import "./globals.css";
-import { ThemeProvider } from "./provider";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script";
+import "./globals.css";
+import { ThemeProvider } from "./provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,6 +36,19 @@ export default function RootLayout({
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>
+        <Script id="chatbot-config" strategy="beforeInteractive">
+          {`
+          window.embeddedChatbotConfig = {
+            chatbotId: "yO-RU4Iht98HP8pk_No_D",
+            domain: "www.chatbase.co"
+          };
+        `}
+        </Script>
+        <Script
+          src="https://www.chatbase.co/embed.min.js"
+          strategy="afterInteractive"
+          defer
+        />
       </body>
     </html>
   );
